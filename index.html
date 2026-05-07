@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABC Island Reisbureau</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar">
+      <h1 id="agencyName">ABC Island Reisbureau</h1>
+      <div class="auth-actions">
+        <button id="openLoginBtn">Medewerker login</button>
+        <button id="logoutBtn" class="hidden">Uitloggen</button>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <h2 id="heroTitle">Ontdek Aruba, Bonaire & Curaçao</h2>
+      <p id="heroText">
+        Plan jouw droomvakantie naar de ABC-eilanden met zorgvuldig geselecteerde hotels,
+        lokale tips en complete pakketten.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="islands" id="islandsSection"></section>
+
+    <section class="hotels">
+      <div class="section-title-row">
+        <h3>Diverse hotels</h3>
+        <button id="addHotelBtn" class="hidden">Hotel toevoegen</button>
+      </div>
+      <div id="hotelGrid" class="hotel-grid"></div>
+    </section>
+
+    <section class="contact">
+      <h3>Reisadvies op maat</h3>
+      <p id="contactText">
+        Neem contact op met onze reisexperts voor huwelijksreizen, familievakanties en duiktrips.
+      </p>
+    </section>
+  </main>
+
+  <dialog id="loginDialog">
+    <form method="dialog" id="loginForm">
+      <h3>Medewerker login</h3>
+      <label>
+        Gebruikersnaam
+        <input name="username" type="text" required />
+      </label>
+      <label>
+        Wachtwoord
+        <input name="password" type="password" required />
+      </label>
+      <p class="hint">Demo login: <strong>admin</strong> / <strong>abc123</strong></p>
+      <p id="loginError" class="error"></p>
+      <menu>
+        <button value="cancel" type="button" id="cancelLogin">Annuleren</button>
+        <button value="default" type="submit">Inloggen</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <template id="hotelCardTemplate">
+    <article class="hotel-card">
+      <img class="hotel-image" alt="Hotelfoto" />
+      <div class="hotel-content">
+        <h4 class="hotel-name"></h4>
+        <p class="hotel-island"></p>
+        <p class="hotel-description"></p>
+        <p class="hotel-price"></p>
+        <div class="hotel-actions hidden">
+          <button class="edit-hotel">Bewerken</button>
+          <button class="delete-hotel">Verwijderen</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <dialog id="hotelDialog">
+    <form method="dialog" id="hotelForm">
+      <h3 id="hotelDialogTitle">Hotel toevoegen</h3>
+      <label>Hotelnaam<input name="name" type="text" required /></label>
+      <label>Eiland
+        <select name="island" required>
+          <option value="Aruba">Aruba</option>
+          <option value="Bonaire">Bonaire</option>
+          <option value="Curaçao">Curaçao</option>
+        </select>
+      </label>
+      <label>Omschrijving<textarea name="description" rows="3" required></textarea></label>
+      <label>Vanafprijs<input name="price" type="text" required /></label>
+      <label>Afbeelding URL<input name="image" type="url" required /></label>
+      <menu>
+        <button type="button" id="cancelHotel">Annuleren</button>
+        <button type="submit">Opslaan</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

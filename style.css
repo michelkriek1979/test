@@ -1,0 +1,153 @@
+:root {
+  --brand: #0077b6;
+  --dark: #023047;
+  --light: #f7fbff;
+  --accent: #ffb703;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--dark);
+  background: var(--light);
+}
+
+.hero {
+  background: linear-gradient(rgba(2, 48, 71, 0.7), rgba(2, 48, 71, 0.5)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80") center/cover;
+  color: white;
+  padding: 1rem 2rem 4rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-content {
+  margin-top: 3rem;
+  max-width: 700px;
+}
+
+main {
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.islands {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.island-card,
+.hotel-card,
+.contact {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.island-card {
+  padding: 1rem;
+}
+
+.section-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hotel-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.hotel-image {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.hotel-content {
+  padding: 1rem;
+}
+
+.hotel-price {
+  color: var(--brand);
+  font-weight: bold;
+}
+
+.hotel-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.contact {
+  padding: 1rem;
+}
+
+button {
+  border: 0;
+  background: var(--brand);
+  color: white;
+  padding: 0.55rem 0.9rem;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.95);
+}
+
+.hidden {
+  display: none !important;
+}
+
+dialog form {
+  min-width: min(90vw, 430px);
+  display: grid;
+  gap: 0.8rem;
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #c7d5e2;
+  border-radius: 8px;
+  padding: 0.55rem;
+  font: inherit;
+}
+
+menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.error {
+  color: #c1121f;
+  min-height: 1.2rem;
+}
+
+.hint {
+  font-size: 0.9rem;
+  color: #555;
+}
